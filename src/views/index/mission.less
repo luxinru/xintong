@@ -1,0 +1,149 @@
+.index-container {
+    position: relative;
+    //height: 849px;
+    //min-height: 849px;
+    font-family: PingFang SC;
+    padding-bottom: 20px;
+    padding-top: 335px;
+    background-color: #E63636;
+    background-image: url("./../../assets/images/shufeng/task/task-1.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    .header-cont{
+        position: absolute;
+        top: 97px;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+        .header-cont-text {
+            font-size: 13px;
+            font-weight: 400;
+            color: #FFFFFF;
+            padding-top: 10px;
+        }
+        .header-cont-number {
+            font-size: 39px;
+            font-family: DIN Alternate;
+            font-weight: bold;
+            color: #FFFFFF;
+        }
+		
+    }
+    .index-title {
+        position: absolute;
+        top: 230px;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+        font-size: 16px;
+        font-weight: bold;
+        color: #FFFFFF;
+    }
+    .index-content {
+        position: relative;
+        padding: 0 13px 70px;
+        .task-list-box {
+            // background: #FFFFFF;
+            background: rgba(230,54,54,.5);
+            box-shadow: 0px 2px 4px 0px rgba(43, 154, 254, 0.4);
+            border-radius: 7px;
+            padding: 10px;
+            // padding-right: 21px;
+            // padding-left: 25px;
+
+            .task-list-item {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 26px  20px;
+                border-bottom: 1px solid #F8F8F9;
+                background: #FFFFFF;
+                margin: 10px 0px;
+                border-radius: 10px;
+                &-left {
+                    flex: 1;
+                    display: flex;
+					justify-content: space-between;
+                    align-items: center;
+                    .item-icon {
+                        width: 20px;
+                        height: 20px;
+                        background-size: cover;
+                        background-repeat: no-repeat;
+                        &.icon-1 {
+                            background-image: url("./../../assets/images/shufeng/task/task-2.png");
+                        }
+                        &.icon-2 {
+                            background-image: url("./../../assets/images/shufeng/task/task-3.png");
+                        }
+                        &.icon-3 {
+                            background-image: url("./../../assets/images/shufeng/task/task-4.png");
+                        }
+                        &.icon-4 {
+                            background-image: url("./../../assets/images/shufeng/task/task-5.png");
+                        }
+                        &.icon-5 {
+                            background-image: url("./../../assets/images/shufeng/task/task-6.png");
+                        }
+                        &.icon-6 {
+                            background-image: url("./../../assets/images/shufeng/task/task-7.png");
+                        }
+						&.icon-7 {
+						    background-image: url("./../../assets/images/shufeng/task/task-8.png");
+						}
+                    }
+                    .item-title-box {
+                        padding-left: 15px;
+                    }
+                   
+
+                    .item-title{
+                        font-size: 14px;
+                        font-weight: 500;
+                        color: #333333;
+                    }
+                    .item-sub-title {
+                        font-size: 12px;
+                        font-weight: 500;
+                        color: #868686;
+                        padding-top: 7px;
+                    }
+                    .item-right{
+                        font-size: 13px;
+                        font-weight: 400;
+                        color: #A5A5A5;
+                    }
+                    .item-title-right{
+                        width: 70px;
+                        display: flex;
+                        align-items: center;
+                        // justify-content: space-between;
+                        margin-right: 20px;
+                    
+                        p{
+                            font-size: 16px;
+                            color: #cccccc;
+                        }
+                    }
+                }
+                &-right {
+                    width: 81px;
+                    height: 29px;
+                    line-height: 29px;
+                    background: #FFFFFF;
+                    border: 1px solid #EC171E;
+                    border-radius: 15px;
+                    text-align: center;
+                    font-size: 13px;
+                    font-weight: 500;
+                    color: #EC171E;
+                    &.active-btn{
+                        background-color: #CACACA;
+                        color: #FFFFFF;
+                        border: none;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,117 @@
+.investment-container {
+    height: 100%;
+    background-color: #F5F5F5;
+    font-family: PingFang SC;
+    padding: 20px 24px 30px 20px;
+    .investment-list-box {
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 4px;
+        .investment-list-line {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-right: 10px;
+            text-align: center;
+            &-top {
+                width: 8px;
+                height: 8px;
+                border: 2px solid #B7B7B7;
+                border-radius: 50%;
+                margin-bottom: 4px;
+            }
+            &-bottom {
+                height: calc(~'100% - 8px');
+                border-left: 2px dashed #B7B7B7;
+            }
+        }
+        .investment-list-info {
+            flex: 1;
+            background: #FFFFFF;
+            border-radius: 7px;
+            padding: 15px 15px 16px 17px;
+            margin-bottom: 17px;
+            position: relative;
+            .project-name {
+                font-size: 15px;
+                line-height: 18px;
+                font-weight: bold;
+                color: #323232;
+                padding-bottom: 10px;
+                display: flex;
+                justify-content: space-between;
+                img{
+                    width: 8px;
+                    height: 13px;
+                }
+            }
+            .project-tag-box {
+                display: flex;
+                align-items: center;
+                padding: 10px 0px;
+                .project-tag {
+                    height: 21px;
+                    padding: 0 10px;
+                    text-align: center;
+                    line-height: 19px;
+                    background: #FFF7F8;
+                    // border: 1px solid #0F79FF;
+                    border-radius: 3px;
+                    font-size: 11px;
+                    font-weight: 500;
+                    color: #FF4F43;
+                }
+            }
+            
+            .project-money {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                &.one {
+                    padding-bottom: 12px;
+                    .investment-btns{
+                        width: 95px;
+                        height: 35px;
+                        background: #FF8C0E;
+                        border-radius: 18px;
+                        font-size: 16px;
+                        font-family: PingFang SC;
+                        font-weight: 400;
+                        color: #FFFFFF;
+                        line-height: 35px;
+                        text-align: center;
+                    }
+                }
+                &-left {
+                    font-size: 13px;
+                    font-weight: 500;
+                    color: #2D2D2D;
+                    .project-info-left-bottom{
+                        font-size: 13px;
+                        font-family: PingFang SC;
+                        font-weight: 500;
+                        color: #6F6D70;
+                        line-height: 21px;
+                    }
+                    .project-info-left-top{
+                        font-size: 20px;
+                        font-family: DIN Alternate;
+                        font-weight: bold;
+                        color: #F33B20;
+                        line-height: 21px;
+                    }
+                    
+                }
+                &-right {
+                    font-size: 13px;
+                    font-weight: 500;
+                    position: absolute;
+                    top: 20px;
+                    right: 20px;
+
+
+                }
+            }
+        }
+    }
+}
