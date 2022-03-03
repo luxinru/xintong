@@ -9,17 +9,20 @@
     <section class="content">
       <div class="title">
         <img src="@/assets/0226/0219首页_slices/椭圆 10 拷贝.png" alt="" />
-        <span>旅游知识精选</span>
+        <span>度假攻略精选</span>
       </div>
       <div class="list">
-        <div class="item" v-for="index in 13" :key="index" @click="$router.push({ name: 'holiday_detail' })">
+        <div
+          class="item"
+          v-for="(item, index) in list"
+          :key="index"
+          @click="toDetail(item)"
+        >
           <div class="img_box">
-            <img src="@/assets/0226/度假攻略_slices/图层 10.png" alt="">
-            <span>清明节辽宁省內自驾游攻略</span>
+            <img :src="item.activity_img || ''" alt="" />
+            <span>{{ item.title || '标题' }}</span>
           </div>
-          <div class="info">
-            说起辽宁省内的水洞,很多人往往想到的是著名的本溪水洞,其实沈阳也有一座水洞,就位于沈阳市苏家屯区的白清寨乡。
-          </div>
+          <div class="info" v-html="item.content || '内容'"></div>
         </div>
       </div>
     </section>
@@ -28,17 +31,42 @@
 
 
 <script>
+import Fetch from '../../utils/fetch'
+
 export default {
   name: 'travel',
   data() {
-    return {}
+    return {
+      list: [],
+    }
   },
   created() {
     this.$parent.footer(false)
   },
-  mounted() {},
+  mounted() {
+    this.init()
+  },
 
   methods: {
+    async init() {
+      const res = await Fetch('/index/vacation', {}, { method: 'get' })
+      const {
+        data: { list },
+      } = res
+      console.log('res :>> ', res)
+      this.list = list
+    },
+
+    toDetail(data) {
+      this.$router.push({
+        path: '/holiday_detail',
+        query: {
+          id: data.id,
+          type: 2,
+        }
+      })
+    },
+
     goBack() {
       this.$router.go(-1)
     },
@@ -117,10 +145,14 @@ export default {
 
       .item {
         width: 100%;
+        height: 203px;
         display: flex;
         flex-direction: column;
         margin-top: 16px;
-        
+        background: #ffffff;
+        box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.1);
+        border-radius: 7px;
+
         &:first-child {
           margin-top: 0;
         }
@@ -149,17 +181,24 @@ export default {
             font-size: 15px;
             font-family: PingFang SC;
             font-weight: bold;
-            color: #FFFFFF;
+            color: #ffffff;
           }
         }
 
         .info {
-          padding: 13px 20px;
+          width: calc(100% - 40px);
+          flex: 1 0;
+          margin: 13px 20px;
           font-size: 11px;
           font-family: PingFang SC;
           font-weight: 500;
           color: #242629;
           line-height: 15px;
+          overflow: hidden;
+
+          /deep/ img {
+            display: none;
+          }
         }
       }
     }
