@@ -21,8 +21,8 @@
           <img :src="item.activity_img || ''" alt="" />
           <div class="info">
             <span>{{ item.title || '标题' }}</span>
-            <span v-html="item.content || '内容'"></span>
-            <span>{{ item.time || '时间' }}</span>
+            <!-- <span v-html="item.content || '内容'"></span> -->
+            <!-- <span>{{ item.time || '时间' }}</span> -->
           </div>
         </div>
       </div>
@@ -165,7 +165,7 @@ export default {
           height: 100%;
           display: flex;
           flex-direction: column;
-          justify-content: space-between;
+          justify-content: center;
 
           span {
             &:nth-child(1) {
@@ -173,34 +173,35 @@ export default {
               font-family: PingFang SC;
               font-weight: bold;
               color: #242629;
+              line-height: 24px;
             }
 
-            &:nth-child(2) {
-              font-size: 11px;
-              font-family: PingFang SC;
-              font-weight: 500;
-              color: rgba(36, 38, 41, 0.5);
-              line-height: 12px;
-              overflow: hidden;
-              text-overflow: ellipsis;
-              display: -webkit-box;
-              -webkit-line-clamp: 4;
-              -webkit-box-orient: vertical;
+            // &:nth-child(2) {
+            //   font-size: 11px;
+            //   font-family: PingFang SC;
+            //   font-weight: 500;
+            //   color: rgba(36, 38, 41, 0.5);
+            //   line-height: 12px;
+            //   overflow: hidden;
+            //   text-overflow: ellipsis;
+            //   display: -webkit-box;
+            //   -webkit-line-clamp: 4;
+            //   -webkit-box-orient: vertical;
 
-              /deep/ img {
-                width: 100%;
-                height: 100%;
-              }
-            }
+            //   /deep/ img {
+            //     width: 100%;
+            //     height: 100%;
+            //   }
+            // }
 
-            &:nth-child(3) {
-              width: 100%;
-              font-size: 12px;
-              font-family: PingFang SC;
-              font-weight: 500;
-              color: #7b7d80;
-              text-align: right;
-            }
+            // &:nth-child(2) {
+            //   width: 100%;
+            //   font-size: 12px;
+            //   font-family: PingFang SC;
+            //   font-weight: 500;
+            //   color: #7b7d80;
+            //   text-align: right;
+            // }
           }
         }
       }
